@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | Dispute Levels</title>
+    <meta name="description" content="Choose the credit education and support plan that fits you best. We make navigating your credit journey simple and flexible.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://assets.cdn.filesafe.space/ztsVjHfx1vCkkB9BDqg1/media/6a69f32b9a8605ccbf6a90e7.png" type="image/x-icon">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#22c335',
+                        secondary: '#1747aa',
+                        darkbg: '#0a0a0a',
+                        darkcard: '#111111'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-icon { transition: transform 0.3s ease; }
+        .active .accordion-content { max-height: 500px; }
+        .active .accordion-icon { transform: rotate(180deg); }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+
+        .pricing-card {
+            background-color: white;
+            border: 2px dashed #e2e8f0;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        .pricing-card:hover {
+            border-color: #22c335;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50 selection:bg-primary selection:text-white">
+
+    <!-- HERO / PRICING SECTION -->
+    <section class="relative min-h-[90vh] flex items-center pt-20 pb-32 overflow-hidden bg-darkbg">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Financial Background" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-darkbg/90 via-darkbg/80 to-darkbg"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            
+            <!-- Header -->
+            <div class="text-center mb-16 reveal">
+                <div class="flex justify-center mb-8">
+                    <img src="https://assets.cdn.filesafe.space/ztsVjHfx1vCkkB9BDqg1/media/6a69f32b0aea34991ebe4fc8.png" alt="Dispute Levels" class="h-16 object-contain bg-white/10 p-2 rounded-xl backdrop-blur-sm">
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 uppercase italic">
+                    Choose The Support Plan That's Right For You
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-medium mb-6">
+                    Our plans provide credit education, credit report review services, and administrative support designed to help consumers better understand their credit profiles and available options.
+                </p>
+
+                <p class="text-sm text-slate-400 max-w-2xl mx-auto italic">
+                    Results vary based on individual circumstances. We do not guarantee credit score increases, financing approvals, or the removal of accurate information from credit reports.
+                </p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto reveal" style="transition-delay: 200ms;">
+                
+                <!-- Tier 1 -->
+                <div class="pricing-card p-8 flex flex-col relative group">
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-black text-primary tracking-widest uppercase italic mb-4">OPTIMIZATION TIER1</h3>
+                        <div class="text-3xl font-black text-slate-900 leading-tight mb-2">
+                            $359
+                        </div>
+                        <div class="text-sm text-slate-500 font-bold mt-1">FIRST PAYMENT</div>
+                        <div class="text-xl font-bold text-slate-800 mt-3">$225 / month</div>
+                    </div>
+                    
+                    <p class="text-sm text-slate-600 text-center mb-8 h-20 flex items-center justify-center">
+                        Charged every 30 days as long as your membership is active
+                    </p>
+
+                    <ul class="space-y-4 mb-8 flex-1 text-sm font-medium text-slate-700">
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Credit Report Review</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Personalized Action Plan</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Educational Resources</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Initial Consultation</li>
+                    </ul>
+
+                    <div class="text-center font-bold text-slate-900 mb-6">
+                        👉 Get Started For $359
+                    </div>
+
+                    <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/checkout-OPTIMIZATIONTIER1" class="block w-full bg-darkbg hover:bg-slate-800 text-white text-center font-black uppercase tracking-widest py-4 rounded-lg transition-colors">
+                        BUY NOW
+                    </a>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="pricing-card p-8 flex flex-col relative group transform md:-translate-y-4 shadow-xl border-primary">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest py-1 px-4 rounded-full shadow-md">
+                        Best Value
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-black text-primary tracking-widest uppercase italic mb-4">CREDIT OPTIMIZATION PLAN GROUP</h3>
+                        <div class="text-3xl font-black text-slate-900 leading-tight mb-2">
+                            $799
+                        </div>
+                        <div class="text-sm text-slate-500 font-bold mt-1">FIRST PAYMENT</div>
+                        <div class="text-xl font-bold text-slate-800 mt-3">$399 / month</div>
+                    </div>
+                    
+                    <p class="text-sm text-slate-600 text-center mb-8 h-20 flex items-center justify-center">
+                        Charged every 30 days as long as your membership is active
+                    </p>
+
+                    <ul class="space-y-4 mb-8 flex-1 text-sm font-medium text-slate-700">
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Support for Group</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Credit Reviews</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Action Plans</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Ongoing Educational Resources</li>
+                    </ul>
+
+                    <div class="text-center font-bold text-slate-900 mb-6">
+                        👉 Get Started For $799
+                    </div>
+
+                    <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/checkout-CREDITOPTIMIZATIONPLANGROUP" class="block w-full bg-darkbg hover:bg-slate-800 text-white text-center font-black uppercase tracking-widest py-4 rounded-lg transition-colors">
+                        BUY NOW
+                    </a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="pricing-card p-8 flex flex-col relative group">
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-black text-primary tracking-widest uppercase italic mb-4">Homebuyer Path Premier Promo</h3>
+                        <div class="text-3xl font-black text-slate-900 leading-tight mb-2">
+                            $2,250
+                        </div>
+                        <div class="text-sm text-slate-500 font-bold mt-1">ONLY CHARGED ONCE</div>
+                    </div>
+                    
+                    <p class="text-sm text-slate-600 text-center mb-8 h-20 flex items-center justify-center">
+                        Credit Repair Services Payment
+                    </p>
+
+                    <ul class="space-y-4 mb-8 flex-1 text-sm font-medium text-slate-700">
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Comprehensive Report Review</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Advanced Action Plan</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Premium Educational Resources</li>
+                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0"></div> Priority Support</li>
+                    </ul>
+
+                    <div class="text-center font-bold text-slate-900 mb-6">
+                        👉 Get Started For $2,250
+                    </div>
+
+                    <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/checkout-HomebuyerPathPremierPromo" class="block w-full bg-darkbg hover:bg-slate-800 text-white text-center font-black uppercase tracking-widest py-4 rounded-lg transition-colors">
+                        BUY NOW
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Important Service Disclosure -->
+            <div class="max-w-5xl mx-auto mt-16 reveal">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-white">
+                    <h4 class="text-sm font-bold text-primary uppercase tracking-widest mb-3">Important Service Disclosure</h4>
+                    <p class="text-slate-300 leading-relaxed mb-6">Our services include credit education, consultation, and administrative support.</p>
+                    <p class="text-white leading-relaxed font-semibold mb-4">Purchasing our services does not guarantee:</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-slate-300 font-medium">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Credit score increases</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Loan approvals</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Mortgage approvals</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Credit card approvals</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Removal of accurate information from credit reports</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Any specific financial outcome</li>
+                    </ul>
+                    <p class="text-slate-400 mt-6 italic font-medium">Individual results vary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WHY CONSUMERS WORK WITH US -->
+    <section class="py-24 bg-darkbg text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Consumers Work With Us</h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto">Our goal is to provide consumers with information, guidance, and support as they navigate credit reporting challenges.</p>
+            </div>
+            
+            <div class="text-center mb-10 reveal">
+                <h3 class="text-2xl font-bold text-white mb-8">What Clients Value</h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    <h4 class="font-bold text-lg">Personalized Attention</h4>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    <h4 class="font-bold text-lg">Educational Approach</h4>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    <h4 class="font-bold text-lg">Transparent Communication</h4>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                    <h4 class="font-bold text-lg">Consumer-Focused Process</h4>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <h4 class="font-bold text-lg">Professional Support</h4>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6M3 21l6-6m0 0l4 4 8-8"></path></svg>
+                    <h4 class="font-bold text-lg">Ongoing Guidance</h4>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <h4 class="font-bold text-lg">Clear Expectations</h4>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+                    <h4 class="font-bold text-lg">Respect For Consumer Rights</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- COMPLIANCE BLOCK -->
+    <section class="py-12 bg-slate-900 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-slate-400">
+                <div>
+                    <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Consumer Rights Notice</h4>
+                    <p class="mb-4">Consumers have the right to:</p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Obtain copies of their credit reports</li>
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dispute inaccurate information directly with credit reporting agencies at no cost</li>
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Receive investigation results regarding disputed information</li>
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Review their rights under applicable federal and state laws</li>
+                    </ul>
+                    <p class="font-bold text-white italic">Purchasing our services is not required to exercise these rights.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Important Disclosure</h4>
+                    <p class="leading-relaxed mb-4">Dispute Levels provides credit education, consultation, and administrative support services.</p>
+                    <p class="mb-2">We do not guarantee:</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Specific credit score increases</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Loan approvals</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Account removals</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Mortgage approvals</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Any other financial outcome</li>
+                    </ul>
+                    <p class="leading-relaxed">Results vary based on individual circumstances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbg pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2026 Dispute Levels. All Rights Reserved.</p>
+                <div class="flex items-center gap-4 text-slate-400 text-sm">
+                    <a href="tel:7547044737" class="hover:text-white transition-colors">754-704-4737</a>
+                    <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+                    <a href="mailto:support@disputelevelcreditrestoration.com" class="hover:text-white transition-colors">support@disputelevelcreditrestoration.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Animation with Failsafe
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        setTimeout(() => {
+            revealElements.forEach(el => el.classList.add('active'));
+        }, 1000);
+
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+            
+            setTimeout(() => {
+                revealElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) el.classList.add('active');
+                });
+            }, 100);
+        } else {
+            revealElements.forEach(el => el.classList.add('active'));
+        }
+    </script>
+</body>
+</html>

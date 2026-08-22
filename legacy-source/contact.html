@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dispute Levels</title>
+    <meta name="description" content="Have a question, ready to get started, or just want to talk to a real person? Reach out to a Dispute Levels advisor today.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Logos/favicon.png" type="image/x-icon">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#22c335',
+                        secondary: '#1747aa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-bg {
+            background-image: linear-gradient(rgba(23, 71, 170, 0.85), rgba(23, 71, 170, 0.90)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Accordion transition classes */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s ease-out;
+        }
+        
+        .accordion-content.active {
+            grid-template-rows: 1fr;
+        }
+
+        .accordion-inner {
+            overflow: hidden;
+        }
+        
+        .accordion-icon {
+            transition: transform 0.3s ease-out;
+        }
+        
+        .accordion-button.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-button.active {
+            color: var(--tw-colors-primary);
+        }
+           .partner-hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50">
+
+        <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-slate-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-secondary font-bold text-xl md:text-2xl tracking-tight flex items-center gap-2">
+                        <img src="assets/Logos/logo.png" alt="" class="w-full h-14">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-primary transition-colors font-medium">About Us</a>
+                    <a href="pricing.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Pricing</a>
+                    <a href="services.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Our Services</a>
+                    <a href="partners.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Partners</a>
+                    <a href="tradelines.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Tradelines</a>
+                    <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-secondary/80 transition-colors flex items-center gap-1">
+                        Schedule a Call
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/billing" class="bg-primary hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Get Started For $0</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-secondary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full left-0 top-20 transition-all opacity-0">
+            <div class="px-4 py-6 space-y-3 flex flex-col">
+                <a href="index.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Home</a>
+                <a href="about.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">About Us</a>
+                <a href="pricing.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Pricing</a>
+                <a href="services.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Our Services</a>
+                <a href="partners.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Partners</a>
+                <a href="tradelines.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Tradelines</a>
+                <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="px-4 py-3 text-secondary font-semibold hover:bg-slate-50 rounded-xl transition-colors flex items-center justify-between">
+                    Schedule a Call
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/billing" class="mt-4 bg-primary text-white px-6 py-4 rounded-xl font-bold shadow-md text-center hover:bg-green-600 transition-colors">Get Started For $0</a>
+            </div>
+        </div>
+    </nav>
+<header class="partner-hero-bg pt-40 pb-20 md:pt-40 md:pb-20 px-4 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10 reveal">
+            <span class="inline-block py-1 px-3 rounded-full bg-green-50 text-primary text-sm font-bold tracking-widest uppercase mb-4">GET IN TOUCH</span>
+           <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6">
+            We're Here to  <span class="text-primary">Help</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto font-medium mb-12">
+Have a question, ready to get started, or just want to talk to a real person? Reach out  a Dispute Levels advisor will get back to you within 24 hours        </div>
+    </header>
+    <!-- Contact Info Cards -->
+    <section class="relative z-20 px-4 -mt-20 md:-mt-24 mb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1  Phone -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/40 border border-slate-100 text-center reveal group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-primary group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Call Us</h3>
+                    <p class="text-lg font-semibold text-secondary mb-1">754-704-4737 </p>
+                    <p class="text-sm text-slate-500 mb-8">Monday – Friday, 9am – 6pm EST</p>
+                    <a href="#" class="inline-flex items-center justify-center gap-2 w-full bg-slate-50 hover:bg-primary hover:text-white text-slate-800 font-bold py-3 px-6 rounded-xl transition-colors">
+                        Call Now <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+
+                <!-- Card 2  Email -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/40 border border-slate-100 text-center reveal group hover:-translate-y-1 transition-all duration-300" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
+                    <p class="text-lg font-semibold text-secondary mb-1">support@disputelevel<br>creditrestoration.com</p>
+                    <p class="text-sm text-slate-500 mb-8">We respond within 24 hours</p>
+                    <a href="mailto:support@disputelevelcreditrestoration.com" class="inline-flex items-center justify-center gap-2 w-full bg-slate-50 hover:bg-secondary hover:text-white text-slate-800 font-bold py-3 px-6 rounded-xl transition-colors">
+                        Send Email <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+
+                <!-- Card 3  Book a Call -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/40 border border-slate-100 text-center reveal group hover:-translate-y-1 transition-all duration-300" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-primary group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Schedule a Consultation</h3>
+                    <p class="text-lg font-semibold text-secondary mb-1">30-minute credit review</p>
+                    <p class="text-sm text-slate-500 mb-8">Pick a time that works for you</p>
+                    <a href="#booking" class="inline-flex items-center justify-center gap-2 w-full bg-slate-50 hover:bg-primary hover:text-white text-slate-800 font-bold py-3 px-6 rounded-xl transition-colors">
+                        Book Now <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form + Calendar -->
+    <section class="py-16 bg-slate-50" id="booking">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                 <!-- LEFT SIDE - Image -->
+                 <div class="reveal" style="transition-delay: 200ms;">
+                   <div class="relative rounded-3xl overflow-hidden shadow-xl w-full h-full min-h-[400px]">
+                       <img src="https://images.pexels.com/photos/8867374/pexels-photo-8867374.jpeg" alt="Contact Us" class="absolute inset-0 w-full h-full object-cover object-right">  
+                   </div>
+                </div>
+                <!-- RIGHT SIDE - Contact Form -->
+                <div class="reveal bg-white p-8 md:p-10 rounded-3xl border border-slate-100 shadow-sm">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Send Us a Message</h2>
+                    <p class="text-slate-600 mb-8">Fill out the form below and a credit advisor will reach out to you within 24 hours.</p>
+                    
+                    <iframe 
+                        src="https://link.kbcnsult.com/widget/form/DIILI736u9rwFgAbwALb" 
+                        style="width:100%;height:100%;min-height:660px;border:none;border-radius:8px" 
+                        id="inline-DIILI736u9rwFgAbwALb"  
+                        data-layout="{'id':'INLINE'}" 
+                        data-trigger-type="alwaysShow" 
+                        data-trigger-value="" 
+                        data-activation-type="alwaysActivated" 
+                        data-activation-value="" 
+                        data-deactivation-type="neverDeactivate" 
+                        data-deactivation-value="" 
+                        data-form-name="Contact Us Page Form" 
+                        data-height="658" 
+                        data-layout-iframe-id="inline-DIILI736u9rwFgAbwALb" 
+                        data-form-id="DIILI736u9rwFgAbwALb" 
+                        title="Contact Us Page Form" 
+                    > 
+                    </iframe> 
+                    <script src="https://link.kbcnsult.com/js/form_embed.js"></script>
+                </div>               
+            </div>
+        </div>
+    </section>
+
+    <!-- Response Time Banner -->
+    <section class="bg-secondary py-5 border-y border-blue-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-white font-medium md:text-lg flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3">
+                <span class="text-yellow-400 text-2xl animate-pulse">⚡</span>
+                Average response time: under 2 hours during business hours  24 hours on weekends.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact FAQ -->
+    <section class="py-20 px-4 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Before You Reach Out</h2>
+                <p class="text-lg text-slate-600">Quick answers to common questions about getting in touch.</p>
+            </div>
+            
+            <div class="space-y-4 reveal">
+                <!-- Q1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden hover:border-primary/50 transition-colors">
+                    <button class="accordion-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="text-lg font-bold text-slate-800 group-hover:text-primary transition-colors">How fast will someone get back to me?</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 text-slate-500 accordion-icon group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-slate-50/50">
+                        <div class="accordion-inner">
+                            <p class="px-6 pb-6 text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+                                During business hours (Monday–Friday, 9am–6pm EST), most inquiries are responded to within 2 hours. Weekend messages are responded to within 24 hours. We don't leave people waiting.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden hover:border-primary/50 transition-colors">
+                    <button class="accordion-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="text-lg font-bold text-slate-800 group-hover:text-primary transition-colors">What happens during a consultation?</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 text-slate-500 accordion-icon group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-slate-50/50">
+                        <div class="accordion-inner">
+                            <p class="px-6 pb-6 text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+                                Your advisor will pull your credit reports, walk through every negative item with you, explain exactly what can be disputed, and give you a realistic timeline and plan. There's no pressure to sign up  just honest information.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden hover:border-primary/50 transition-colors">
+                    <button class="accordion-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="text-lg font-bold text-slate-800 group-hover:text-primary transition-colors">Is my personal information safe?</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 text-slate-500 accordion-icon group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-slate-50/50">
+                        <div class="accordion-inner">
+                            <p class="px-6 pb-6 text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+                                Absolutely. All information shared with Dispute Levels is encrypted, stored securely, and never sold or shared with third parties. We handle your data with the same care we handle your credit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Q4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden hover:border-primary/50 transition-colors">
+                    <button class="accordion-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="text-lg font-bold text-slate-800 group-hover:text-primary transition-colors">I already have an account  how do I get support?</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 text-slate-500 accordion-icon group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-slate-50/50">
+                        <div class="accordion-inner">
+                            <p class="px-6 pb-6 text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+                                Existing clients can log in to the client portal at secureclientaccess.com or email support@disputelevelcreditrestoration.com with your account details. Your dedicated advisor is also available by phone or chat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Q5 -->
+                <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden hover:border-primary/50 transition-colors">
+                    <button class="accordion-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="text-lg font-bold text-slate-800 group-hover:text-primary transition-colors">Can I reach out if I'm not sure credit repair is right for me?</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 text-slate-500 accordion-icon group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-slate-50/50">
+                        <div class="accordion-inner">
+                            <p class="px-6 pb-6 text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+                                Yes  that's exactly what the consultation is for. You don't need to have made a decision. Just book a call, tell us your situation, and we'll give you an honest answer about whether credit repair makes sense for you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Inquiries -->
+    <section class="pb-24 px-4 bg-slate-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-green-50 border border-green-100 rounded-3xl p-8 md:p-12 text-center reveal shadow-sm">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Are You a Mortgage Broker, Dealer, or Tax Professional?</h2>
+                <p class="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">Partner inquiries are handled separately. Fill out our partner application and a partner coordinator will reach out within 24 hours to get you set up.</p>
+                <a href="partners.html" class="inline-flex items-center gap-2 bg-primary hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    Go to Partner Page <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="cta-bg py-28 relative overflow-hidden" id="final-cta">
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                Not ready to call? <br class="hidden sm:block"/> Start with a consultation.
+            </h2>
+            <p class="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                No commitment, no pressure. Just a real conversation about your credit and what's possible.
+            </p>
+            <a href="consultation.html" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-green-500 text-white px-10 py-5 rounded-full font-bold text-xl transition-all shadow-2xl shadow-primary/30 transform hover:-translate-y-1">
+                Book My consultation
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+            <p class="mt-6 text-sm text-blue-200/80 font-medium">No hidden fees. 100% confidential.</p>
+        </div>
+    </section>
+
+          <!-- Footer -->
+    <footer class="bg-slate-900 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                
+                <div class="lg:col-span-4 space-y-6">
+                     <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-secondary font-bold text-xl md:text-2xl tracking-tight flex items-center gap-2">
+                        <img src="assets/Logos/logo.png" alt="" class="w-full h-14">
+                    </a>
+                </div>
+                    <p class="text-slate-400 leading-relaxed max-w-sm">
+                        Empowering individuals with premium credit repair and financial solutions for a brighter, more secure future.
+                    </p>
+                    <ul class="space-y-3 pt-2">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span class="text-slate-300">Customer Service Line: </span><a href="tel:7547044737" class="text-slate-300 hover:text-primary transition-colors">754-704-4737</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:support@disputelevelcreditrestoration.com" class="text-slate-300 hover:text-primary transition-colors">support@disputelevelcreditrestoration.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-slate-400 hover:text-primary transition-colors inline-block">About us</a></li>
+                        <li><a href="pricing.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Pricing</a></li>
+                        <li><a href="success-stories.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Success stories</a></li>
+                        <li><a href="services.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Our Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide">Support</h4>
+                    <ul class="space-y-4">
+                        <li><a href="credit-info.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Credit info</a></li>
+                        <li><a href="faq.html" class="text-slate-400 hover:text-primary transition-colors inline-block">FAQ</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide">Legal</h4>
+                    <ul class="space-y-4">
+                        <li><a href="terms.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Terms and Conditions</a></li>
+                        <li><a href="privacy.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm text-center md:text-left">
+                    2026 Dispute Levels Credit & Financial Solutions. All rights reserved.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.secureclientaccess.com/" target="_blank" rel="noopener noreferrer" class="text-sm text-slate-500 hover:text-white transition-colors">Client Portal</a>
+                    <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                    <a href="sitemap.html" class="text-sm text-slate-500 hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript for interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    // Small delay to allow display:block to apply before animating opacity
+                    setTimeout(() => {
+                        menu.classList.remove('opacity-0');
+                    }, 10);
+                } else {
+                    menu.classList.add('opacity-0');
+                    // Wait for transition to finish before hiding
+                    setTimeout(() => {
+                        menu.classList.add('hidden');
+                    }, 300); // matches Tailwind's default duration-300 if added, but transition-all covers it
+                }
+            });
+
+            // Close mobile menu on link click
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        menu.classList.add('hidden');
+                    }, 300);
+                });
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md', 'bg-white/95');
+                navbar.classList.remove('shadow-sm', 'bg-white/90');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white/95');
+                navbar.classList.add('shadow-sm', 'bg-white/90');
+            }
+        });
+
+        // Accordion Logic
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Toggle active class on button (for icon rotation & text color)
+                button.classList.toggle('active');
+                
+                // Toggle active class on content (for grid-template-rows animation)
+                const content = button.nextElementSibling;
+                content.classList.toggle('active');
+                
+                // Optional: Close other accordions when one is opened
+                accordionButtons.forEach(otherButton => {
+                    if (otherButton !== button && otherButton.classList.contains('active')) {
+                        otherButton.classList.remove('active');
+                        otherButton.nextElementSibling.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+        
+        setTimeout(() => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('active');
+                }
+            });
+        }, 100);
+    </script>
+</body>
+</html>

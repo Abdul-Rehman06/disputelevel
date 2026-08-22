@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Dispute Levels</title>
+    <meta name="description" content="Simple, transparent pricing for credit education, credit report reviews, and administrative support.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Logos/favicon.png" type="image/x-icon">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#22c335',
+                        secondary: '#1747aa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-bg {
+            background-image: linear-gradient(rgba(23, 71, 170, 0.85), rgba(23, 71, 170, 0.90)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+          .partner-hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50">
+
+    <!-- Sticky Navbar -->
+        <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-slate-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-secondary font-bold text-xl md:text-2xl tracking-tight flex items-center gap-2">
+                        <img src="assets/Logos/logo.png" alt="" class="w-full h-14">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-primary transition-colors font-medium">About Us</a>
+                    <a href="pricing.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Pricing</a>
+                    <a href="services.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Our Services</a>
+                    <a href="partners.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Partners</a>
+                    <a href="tradelines.html" class="text-slate-600 hover:text-primary transition-colors font-medium">Tradelines</a>
+                    <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-secondary/80 transition-colors flex items-center gap-1">
+                        Schedule a Call
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/billing" class="bg-primary hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Get Started For $0</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-secondary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full left-0 top-20 transition-all opacity-0">
+            <div class="px-4 py-6 space-y-3 flex flex-col">
+                <a href="index.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Home</a>
+                <a href="about.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">About Us</a>
+                <a href="pricing.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Pricing</a>
+                <a href="services.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Our Services</a>
+                <a href="partners.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Partners</a>
+                <a href="tradelines.html" class="px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary rounded-xl transition-colors">Tradelines</a>
+                <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="px-4 py-3 text-secondary font-semibold hover:bg-slate-50 rounded-xl transition-colors flex items-center justify-between">
+                    Schedule a Call
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/billing" class="mt-4 bg-primary text-white px-6 py-4 rounded-xl font-bold shadow-md text-center hover:bg-green-600 transition-colors">Get Started For $0</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Trust Bullets moved to header -->
+    <header class="partner-hero-bg pt-40 pb-20 md:pt-40 md:pb-20 px-4 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10 reveal">
+             <span class="inline-block py-1 px-3 rounded-full bg-green-50 text-primary text-sm font-bold tracking-widest uppercase mb-4">PRICING</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6">
+                Simple, Transparent <span class="text-primary">Pricing</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto font-medium mb-8">
+                Choose the level of support that best fits your goals and receive personalized guidance designed to help you better understand and navigate your credit journey.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 text-slate-100 font-medium mb-8">
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    Transparent Pricing
+                </div>
+                <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    Personalized Support
+                </div>
+                <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    Educational Resources
+                </div>
+                <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    Ongoing Guidance
+                </div>
+            </div>
+            <p class="text-sm text-slate-300/80 max-w-3xl mx-auto italic">
+                Results vary by individual circumstances. We do not guarantee specific credit score increases, financing approvals, or the removal of accurate information from credit reports.
+            </p>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="reveal py-20 px-4 relative overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                
+                <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-2">CHOOSE YOUR PLAN</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Select The Support Option That's Right For You</h3>
+                <p class="text-slate-500 max-w-3xl mx-auto text-lg">Every client has unique circumstances. Our plans are designed to provide varying levels of educational resources, consultation, and administrative support.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- CARD 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 shadow-sm hover:shadow-lg border border-slate-100 flex flex-col relative reveal transition-all">
+                    <div class="text-primary font-bold text-sm tracking-widest uppercase mb-2">Individual</div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">OPTIMIZATION TIER1</h4>
+                    <p class="text-slate-600 text-sm mb-6 h-12">Charged every 30 days as long as your membership is active.</p>
+                    
+                    <div class="mb-2">
+                        <span class="text-4xl font-extrabold text-slate-900">$359</span>
+                        <span class="text-slate-500 font-medium"> First Payment</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-2xl font-bold text-slate-800">$225</span>
+                        <span class="text-slate-500 font-medium"> / month</span>
+                    </div>
+                    <div class="mb-6 border-b border-slate-200 pb-6"></div>
+                    
+                    <div class="flex-1">
+                        <p class="font-bold text-slate-800 mb-4">Includes:</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Initial Credit Consultation</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Credit Report Review</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Personalized Action Plan</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Educational Resources</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Credit Profile Assessment</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Consumer Rights Information</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Email Support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/checkout-OPTIMIZATIONTIER1" class="block w-full text-center bg-white border-2 border-primary hover:bg-primary hover:text-white text-primary font-bold py-3 rounded-xl transition-colors">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="bg-secondary rounded-2xl p-8 shadow-2xl border border-secondary relative transform md:-translate-y-4 flex flex-col reveal" style="transition-delay: 150ms;">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider shadow-md w-max">
+                        Most Popular
+                    </div>
+                    <div class="text-blue-300 font-bold text-sm tracking-widest uppercase mb-2 mt-2">Group</div>
+                    <h4 class="text-2xl font-bold text-white mb-2">CREDIT OPTIMIZATION PLAN GROUP</h4>
+                    <p class="text-blue-100 text-sm mb-6 h-12">Charged every 30 days as long as your membership is active.</p>
+                    
+                    <div class="mb-2">
+                        <span class="text-4xl font-extrabold text-white">$799</span>
+                        <span class="text-blue-200 font-medium"> First Payment</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-2xl font-bold text-white">$399</span>
+                        <span class="text-blue-200 font-medium"> / month</span>
+                    </div>
+                    <div class="mb-6 border-b border-blue-800 pb-6"></div>
+                    
+                    <div class="flex-1">
+                        <p class="font-bold text-white mb-4">Includes Everything In Standard Plus:</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-blue-50"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Credit Reviews For Group</li>
+                            <li class="flex items-start gap-3 text-blue-50"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Joint Strategy Session</li>
+                            <li class="flex items-start gap-3 text-blue-50"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Personalized Recommendations</li>
+                            <li class="flex items-start gap-3 text-blue-50"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Educational Resources</li>
+                            <li class="flex items-start gap-3 text-blue-50"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Ongoing Email Support</li>
+                            <li class="flex items-start gap-3 text-blue-50"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Progress Review Consultation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/checkout-CREDITOPTIMIZATIONPLANGROUP" class="block w-full text-center bg-primary hover:bg-green-500 text-white font-bold py-3 rounded-xl transition-colors shadow-lg">Get Started As A Group</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 shadow-sm hover:shadow-lg border border-slate-100 flex flex-col relative reveal transition-all" style="transition-delay: 300ms;">
+                    <div class="text-primary font-bold text-sm tracking-widest uppercase mb-2">Premier</div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Homebuyer Path Premier Promo</h4>
+                    <p class="text-slate-600 text-sm mb-6 h-12">Credit Repair Services Payment.</p>
+                    
+                    <div class="mb-2">
+                        <span class="text-4xl font-extrabold text-slate-900">$2250</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-lg font-bold text-slate-800">Only charged once</span>
+                    </div>
+                    <div class="mb-6 border-b border-slate-200 pb-6"></div>
+                    
+                    <div class="flex-1">
+                        <p class="font-bold text-slate-800 mb-4">Includes:</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Comprehensive credit report review</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Advanced action plan</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Premium educational resources</li>
+                            <li class="flex items-start gap-3 text-slate-600"><svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Priority support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/checkout-HomebuyerPathPremierPromo" class="block w-full text-center bg-white border-2 border-primary hover:bg-primary hover:text-white text-primary font-bold py-3 rounded-xl transition-colors">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-5xl mx-auto reveal">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Important Service Disclosure</h4>
+                    <p class="text-slate-600 leading-relaxed mb-6">Our services include credit education, consultation, administrative support, and assistance related to reviewing credit reporting concerns.</p>
+                    <p class="text-slate-600 leading-relaxed font-semibold mb-4">Purchasing our services does not guarantee:</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-slate-700 font-medium">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-slate-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Credit score increases</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-slate-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Loan approvals</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-slate-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Mortgage approvals</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-slate-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Credit card approvals</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-slate-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Removal of accurate information from credit reports</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-slate-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Any specific financial outcome</li>
+                    </ul>
+                    <p class="text-slate-600 mt-6 italic font-medium">Individual results vary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAN COMPARISON TABLE -->
+    <section class="py-24 bg-slate-50 reveal">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-2">NOT SURE WHICH PLAN IS RIGHT FOR YOU?</h2>
+                <h3 class="text-3xl font-bold text-secondary mb-4">Compare Your Options</h3>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden reveal">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100/50">
+                                <th class="py-5 px-6 font-bold text-slate-900 border-b border-slate-200 w-2/5">Feature</th>
+                                <th class="py-5 px-4 font-bold text-slate-900 border-b border-slate-200 text-center w-1/5">TIER1</th>
+                                <th class="py-5 px-4 font-bold text-secondary border-b border-slate-200 text-center w-1/5">GROUP</th>
+                                <th class="py-5 px-4 font-bold text-slate-900 border-b border-slate-200 text-center w-1/5">PREMIER</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-600 divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Credit Consultation</td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Credit Report Review</td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Personalized Action Plan</td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Educational Resources</td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Consumer Rights Information</td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Support For Group</td>
+                                <td class="py-4 px-4 text-center opacity-30"><svg class="w-6 h-6 text-slate-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center opacity-30"><svg class="w-6 h-6 text-slate-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Progress Reviews</td>
+                                <td class="py-4 px-4 text-center opacity-30"><svg class="w-6 h-6 text-slate-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-slate-800">Advanced Action Plan & Priority Support</td>
+                                <td class="py-4 px-4 text-center opacity-30"><svg class="w-6 h-6 text-slate-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                                <td class="py-4 px-4 text-center opacity-30"><svg class="w-6 h-6 text-slate-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                                <td class="py-4 px-4 text-center"><svg class="w-6 h-6 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING FAQ -->
+    <section class="py-24 bg-white reveal">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h3 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Frequently Asked Questions</h3>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 reveal">
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Which plan should I choose?</h4>
+                    <p class="text-slate-600 leading-relaxed">The best plan depends on your individual circumstances, goals, and desired level of support. Our team can help you determine which option may be most appropriate during your consultation.</p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 reveal" style="transition-delay: 100ms;">
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">What exactly do your services include?</h4>
+                    <p class="text-slate-600 leading-relaxed">Our services may include consultations, educational resources, credit report reviews, administrative support, and personalized action planning.</p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 reveal" style="transition-delay: 200ms;">
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Do you guarantee results?</h4>
+                    <p class="text-slate-600 leading-relaxed">No. Because every credit profile is different, we cannot guarantee specific credit score increases, account removals, loan approvals, or other outcomes.</p>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 reveal">
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">How long does the process take?</h4>
+                    <p class="text-slate-600 leading-relaxed">Timelines vary based on individual circumstances, responses from credit bureaus and furnishers, and the nature of the issues being reviewed.</p>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 reveal" style="transition-delay: 100ms;">
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Can I upgrade my plan later?</h4>
+                    <p class="text-slate-600 leading-relaxed">Yes. Existing clients may upgrade to another support level if additional services become appropriate.</p>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 reveal" style="transition-delay: 200ms;">
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Do I need your services to dispute information on my credit report?</h4>
+                    <p class="text-slate-600 leading-relaxed">No. Consumers have the right to dispute inaccurate information directly with credit reporting agencies at no cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MINI TESTIMONIALS -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-2">CLIENT EXPERIENCES</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Clients Are Saying</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 reveal">
+                    <div class="flex text-yellow-400 mb-6">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">"The team was professional, responsive, and took time to answer my questions. I left the consultation with a clearer understanding of my credit report."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Marcus+T&background=22c335&color=fff" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900">Marcus T.</h5>
+                            <span class="text-sm text-slate-500">Client</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 reveal" style="transition-delay: 150ms;">
+                    <div class="flex text-yellow-400 mb-6">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">"I appreciated the educational approach and transparent communication throughout the process. Everything was explained clearly."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Latoya+B&background=1747aa&color=fff" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900">Latoya B.</h5>
+                            <span class="text-sm text-slate-500">Nurse</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 reveal" style="transition-delay: 300ms;">
+                    <div class="flex text-yellow-400 mb-6">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">"The consultation helped me better understand my credit report and create a clear plan moving forward."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=James+W&background=0f172a&color=fff" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900">James W.</h5>
+                            <span class="text-sm text-slate-500">Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center reveal">
+                <p class="text-sm text-slate-500 max-w-3xl mx-auto italic">Testimonials reflect individual experiences and may not represent the experience of all clients. Results vary.</p>
+            </div>
+        </div>
+    </section>
+
+      <!-- Book a Consultation -->
+    <section class="py-24 bg-slate-50 border-t border-slate-100" id="consultation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-2">consultation</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-secondary mb-6">Schedule Your Complimentary Credit Consultation</h3>
+                <p class="text-lg text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto">Speak with our team, ask questions, and learn more about your available options.</p>
+                <ul class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 mb-8">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-800 font-medium text-lg">No Obligation Consultation</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-800 font-medium text-lg">Personalized Review</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-800 font-medium text-lg">Educational Guidance</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-800 font-medium text-lg">Questions Answered</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-800 font-medium text-lg">Plan Recommendations</span>
+                    </li>
+                </ul>
+                <div class="flex justify-center">
+                    <a href="https://link.kbcnsult.com/widget/booking/2FdegAiF26T5ryjb1wRs" class="bg-primary hover:bg-green-600 text-white px-8 py-3.5 rounded-full font-bold text-center transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Book Consultation</a>
+                </div>
+            </div>
+            
+            <div class="reveal" style="transition-delay: 200ms;">
+                <!-- Calendar Embed -->
+                <div class="bg-white rounded-3xl p-4 shadow-xl border border-slate-100 min-h-[600px] overflow-hidden">
+                    <iframe src="https://link.kbcnsult.com/widget/booking/2FdegAiF26T5ryjb1wRs" style="width: 100%;border:none;overflow: hidden;min-height:600px;" scrolling="no" id="2FdegAiF26T5ryjb1wRs_1780827435100"></iframe><br><script src="https://link.kbcnsult.com/js/form_embed.js" type="text/javascript"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="cta-bg py-28 relative overflow-hidden" id="signup">
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                Ready To Learn More?
+            </h2>
+            <p class="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                Get personalized guidance designed to help you better understand your credit profile and available options.
+            </p>
+ 
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://kbrownconsultantgroupllc.getcredithelpnow.com/" class="bg-primary hover:bg-green-600 text-white px-8 py-3.5 rounded-full font-bold text-center transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    Get Started
+                </a>
+                <a href="#consultation" class="bg-white border-2 border-secondary text-secondary hover:bg-primary hover:text-white px-8 py-3.5 rounded-full font-bold text-center transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    Schedule Consultation
+                </a>
+            </div>
+
+            <p class="mt-8 text-sm text-blue-200/80 font-medium max-w-3xl mx-auto">
+                Results vary. No specific credit score increase, account removal, financing approval, or other outcome is guaranteed.
+            </p>
+        </div>
+    </section>
+       <!-- Footer -->
+    <footer class="bg-slate-900 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                
+                <div class="lg:col-span-4 space-y-6">
+                     <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-secondary font-bold text-xl md:text-2xl tracking-tight flex items-center gap-2">
+                        <img src="assets/Logos/logo.png" alt="" class="w-full h-14">
+                    </a>
+                </div>
+                    <p class="text-slate-400 leading-relaxed max-w-sm">
+                        Empowering individuals with premium credit repair and financial solutions for a brighter, more secure future.
+                    </p>
+                    <ul class="space-y-3 pt-2">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span class="text-slate-300">Customer Service Line: </span><a href="tel:7547044737" class="text-slate-300 hover:text-primary transition-colors">754-704-4737</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:support@disputelevelcreditrestoration.com" class="text-slate-300 hover:text-primary transition-colors">support@disputelevelcreditrestoration.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-slate-400 hover:text-primary transition-colors inline-block">About us</a></li>
+                        <li><a href="pricing.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Pricing</a></li>
+                        <li><a href="success-stories.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Success stories</a></li>
+                        <li><a href="services.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Our Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide">Support</h4>
+                    <ul class="space-y-4">
+                        <li><a href="credit-info.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Credit info</a></li>
+                        <li><a href="faq.html" class="text-slate-400 hover:text-primary transition-colors inline-block">FAQ</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide">Legal</h4>
+                    <ul class="space-y-4">
+                        <li><a href="terms.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Terms and Conditions</a></li>
+                        <li><a href="privacy.html" class="text-slate-400 hover:text-primary transition-colors inline-block">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-slate-950/40 border border-slate-800 rounded-2xl p-6 mb-10">
+                <h4 class="text-white font-semibold mb-2 tracking-wide">Consumer Rights Notice</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">You have the right to obtain copies of your credit reports and dispute inaccurate information directly with credit reporting agencies at no cost. Purchasing our services is not required to exercise your legal rights.</p>
+                <h4 class="text-white font-semibold mb-2 tracking-wide">Important Disclosure</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Dispute Levels provides educational, consultation, and administrative support services. We do not guarantee specific outcomes or the removal of accurate information from credit reports.</p>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm text-center md:text-left">
+                    2026 Dispute Levels Credit & Financial Solutions. All rights reserved.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.secureclientaccess.com/" target="_blank" rel="noopener noreferrer" class="text-sm text-slate-500 hover:text-white transition-colors">Client Portal</a>
+                    <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                    <a href="sitemap.html" class="text-sm text-slate-500 hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Vanilla JavaScript for interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('opacity-0');
+            });
+
+            // Close mobile menu on link click
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-md', 'bg-white/95');
+                    navbar.classList.remove('shadow-sm', 'bg-white/90');
+                } else {
+                    navbar.classList.remove('shadow-md', 'bg-white/95');
+                    navbar.classList.add('shadow-sm', 'bg-white/90');
+                }
+            });
+        }
+
+        // Scroll Reveal Animation using Intersection Observer
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        if (revealElements.length > 0) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // only reveal once
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+            
+            // Trigger active on elements already in view on load
+            setTimeout(() => {
+                revealElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 100);
+        }
+    </script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion as Motion, useReducedMotion } from 'framer-motion';
 import {
@@ -428,23 +427,15 @@ export function ConsumerRightsSection({ content }) {
 }
 
 function HomeBookingEmbed({ content }) {
-  const [loaded, setLoaded] = useState(false);
-  const scriptStatus = useExternalScript(formEmbedScript);
+  useExternalScript(formEmbedScript);
   return (
-    <div className={'home-booking' + (loaded ? ' home-booking--loaded' : '')} id="consultation-calendar">
-      {!loaded && (
-        <div className="home-booking__status" role="status">
-          <CalendarCheck aria-hidden="true" />
-          <strong>{scriptStatus === 'error' ? content.cta.label : content.title}</strong>
-          <span>{content.intro}</span>
-          {scriptStatus === 'error' && <a href={content.bookingUrl}>{content.cta.label}<ArrowRight aria-hidden="true" /></a>}
-        </div>
-      )}
+    <div className="home-booking home-booking--loaded" id="consultation-calendar">
       <iframe
         src={content.bookingUrl}
+        style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
+        scrolling="no"
+        id="2FdegAiF26T5ryjb1wRs_1780827435100"
         title="Schedule your credit consultation"
-        loading="lazy"
-        onLoad={() => setLoaded(true)}
       />
     </div>
   );
